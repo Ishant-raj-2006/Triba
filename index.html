@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIBA | Premium Fashion & Cosmetics</title>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="TRIBA: Modern fashion and cosmetic brand representing style, quality, and confidence.">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">TRIBA<span class="logo-dot">.</span></a>
+
+            <div class="nav-links desktop">
+                <a href="index.html" class="active">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-icon"><i data-lucide="search"></i></button>
+                <a href="login.html" class="nav-icon"><i data-lucide="user"></i></a>
+                <a href="cart.html" class="nav-icon cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <div class="hero-text">
+                <span class="hero-subtitle">NEW ARRIVALS 2026</span>
+                <h1>Style That <br> Defines You</h1>
+                <p>Experience the perfect harmony of high-end fashion and luxury cosmetics. Crafting your unique identity with every thread and touch.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary">SHOP NOW <i data-lucide="arrow-right"></i></button>
+                    <button class="btn-secondary">EXPLORE COLLECTIONS</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="./src/assets/hero_banner.png" alt="TRIBA Premium Collection" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Brand Intro -->
+    <section class="brand-intro section-padding container">
+        <div class="intro-grid">
+            <div class="intro-text">
+                <label>ABOUT TRIBA</label>
+                <h2>Empowering Your <br> Elegance</h2>
+                <p>TRIBA represents more than just a brand; it is a celebration of individuality. We focus on modern fashion and cosmetics that bring out your internal confidence.</p>
+                <a href="about.html" class="btn-text">OUR STORY <i data-lucide="arrow-right"></i></a>
+            </div>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>PREMIUM QUALITY</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>EXQUISITE DESIGNS</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>CUSTOMER CARE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Collection</h2>
+                <a href="services.html" class="btn-text">VIEW ALL <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div id="featured-products" class="product-grid">
+                <!-- Products will be loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section section-padding">
+        <div class="container">
+            <div class="newsletter-box glass">
+                <h2>JOIN THE TRIBA CLUB</h2>
+                <p>Subscribe for exclusive access to new collections and luxury events.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">TRIBA<span class="logo-dot">.</span></a>
+                    <p>TRIBA represents modern fashion and cosmetic excellence. Elevating your style with premium quality products designed for the contemporary woman.</p>
+                    <div class="social-links" style="display: flex; gap: 1rem; color: #888;">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>SHOP</h4>
+                    <ul>
+                        <li><a href="services.html">NEW ARRIVALS</a></li>
+                        <li><a href="services.html">BEST SELLERS</a></li>
+                        <li><a href="services.html">FASHION</a></li>
+                        <li><a href="services.html">COSMETICS</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="#">SHIPPING & RETURNS</a></li>
+                        <li><a href="#">PRIVACY POLICY</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>CONTACT US</h4>
+                    <p style="color: #888; margin-bottom: 0.5rem;"><i data-lucide="phone" style="width: 14px; margin-right: 5px;"></i> +1 234 567 8900</p>
+                    <p style="color: #888; margin-bottom: 0.5rem;"><i data-lucide="mail" style="width: 14px; margin-right: 5px;"></i> support@triba.com</p>
+                    <p style="color: #888;"><i data-lucide="map-pin" style="width: 14px; margin-right: 5px;"></i> New York, NY 10001</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 TRIBA. All rights reserved. Designed for Premium Fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

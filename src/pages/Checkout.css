@@ -1,0 +1,141 @@
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.checkout-form-section h3, .order-summary h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.bill-info {
+  padding: 3rem;
+  border-radius: 30px;
+  margin-bottom: 3rem;
+  background: white !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-options {
+  padding: 3rem;
+  border-radius: 30px;
+  background: white !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.payment-item {
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  color: var(--text-secondary);
+}
+
+.payment-item:hover, .payment-item.active {
+  background: var(--bg-secondary);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.payment-item.active {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, white 100%);
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.1);
+}
+
+.card-details, .upi-details {
+  display: grid;
+  gap: 1.5rem;
+  animation: fadeIn 0.4s forwards;
+}
+
+.card-details input, .upi-details input {
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.order-summary {
+  padding: 3rem;
+  border-radius: 30px;
+  background: white !important;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 120px;
+}
+
+.summary-items {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.summary-item .free {
+  color: #2ecc71;
+  font-weight: 700;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 2.5rem;
+}
+
+.checkout-btn {
+  padding: 1.25rem;
+}
+
+.secure-text {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}

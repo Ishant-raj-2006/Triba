@@ -1,0 +1,114 @@
+:root {
+  --font-family: 'Outfit', 'Inter', sans-serif;
+  
+  /* Color Palette */
+  --bg-primary: #FAF9F6; /* Creamy off-white/nude */
+  --bg-secondary: #FFF8F3; /* Soft peach/pastel */
+  --text-primary: #1A1A1A; /* Deep Charcoal/Black */
+  --text-secondary: #5A5A5A; /* Muted Grey */
+  --accent-gold: #C5A059; /* Elegant muted gold */
+  --accent-gold-hover: #AA8C4B;
+  --accent-soft: #EDE6DB; /* Pastel nude */
+  --border-color: #E2DFD2;
+  --white: #FFFFFF;
+  
+  /* Layout */
+  --container-max-width: 1440px;
+  --header-height: 80px;
+  
+  /* Shadows & Transitions */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+/* Base Classes */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  .container {
+    padding: 0 1.25rem;
+  }
+}

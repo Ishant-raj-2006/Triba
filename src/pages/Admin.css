@@ -1,0 +1,219 @@
+.admin-page {
+  display: flex;
+  min-height: 100vh;
+  margin-top: 0;
+  background: var(--bg-primary);
+}
+
+.admin-sidebar {
+  width: 300px;
+  background: var(--text-primary);
+  color: white;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 4rem;
+}
+
+.sidebar-header h2 span {
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  display: block;
+  letter-spacing: 0.4em;
+  color: var(--accent-gold);
+  margin-top: -5px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-nav button {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #8E8D8A;
+  transition: var(--transition-smooth);
+}
+
+.sidebar-nav button:hover,
+.sidebar-nav button.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.sidebar-nav button.active {
+  background: var(--accent-gold);
+}
+
+.admin-content {
+  flex: 1;
+  padding: 3rem;
+  background: #fdfdfd;
+}
+
+.content-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.hdr-search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  width: 400px;
+}
+
+.hdr-search input {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+.avatar {
+  background: var(--bg-secondary);
+  color: var(--accent-gold);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.view-header h3 {
+  font-size: 2rem;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.admin-table td {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
+.admin-table td:first-child {
+  border-left: 1px solid var(--border-color);
+  border-radius: 15px 0 0 15px;
+}
+
+.admin-table td:last-child {
+  border-right: 1px solid var(--border-color);
+  border-radius: 0 15px 15px 0;
+}
+
+.p-name { color: var(--text-primary); font-size: 1rem; }
+.p-price { color: var(--accent-gold); }
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-btn { color: #5a5eff; }
+.delete-btn { color: #ff5a5a; }
+
+.status {
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status.delivered { background: #e6f9f0; color: #2ecc71; }
+.status.processing { background: #fff8e6; color: #f1c40f; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card h4 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.stat-card p {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .admin-sidebar { width: 80px; padding: 2rem 1rem; }
+  .sidebar-header, .sidebar-nav button span:not(.lucide), .sidebar-nav button { justify-content: center; }
+  .sidebar-nav button span { display: none; }
+  .sidebar-header h2 { font-size: 1rem; text-align: center; }
+  .sidebar-nav button { padding: 1.5rem; }
+  .hdr-search { width: 250px; }
+}
