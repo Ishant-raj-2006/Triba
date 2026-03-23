@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Bag | TRIBA</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">TRIBA<span class="logo-dot">.</span></a>
+            <div class="nav-links desktop">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-icon cart-icon active">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding container" style="margin-top: 50px;">
+        <h1 style="font-size: 3rem; margin-bottom: 3rem;">Shopping Bag.</h1>
+        
+        <div class="cart-grid">
+            <div id="cart-items">
+                <!-- Items loaded by JS -->
+            </div>
+            
+            <div class="cart-summary">
+                <h2>Bag Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <div class="total-row summary-row">
+                    <span>Total</span>
+                    <span id="cart-final-total">$0.00</span>
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-top: 2rem;" onclick="location.href='checkout.html'">PROCEED TO CHECKOUT</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 TRIBA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Special override for cart final total
+        document.addEventListener('DOMContentLoaded', () => {
+            const totalStr = document.getElementById('cart-total').textContent;
+            document.getElementById('cart-final-total').textContent = totalStr;
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>

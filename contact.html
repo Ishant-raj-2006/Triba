@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | TRIBA</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">TRIBA<span class="logo-dot">.</span></a>
+            <div class="nav-links desktop">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="contact.html" class="active">CONTACT</a>
+            </div>
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-icon cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <label>WE LOVE TO HEAR FROM YOU</label>
+            <h1>Get in Touch</h1>
+        </div>
+    </div>
+
+    <section class="contact-content section-padding container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <label>CONTACT – TRIBA</label>
+                <h2>Connecting with <br> Our Community</h2>
+                <p>Humein aapki feedback aur questions ka intezaar rehta hai. Aap humse niche diye gaye options ke zariye connect kar sakte hain.</p>
+                
+                <div class="info-items">
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="phone"></i></div>
+                        <div class="info-text">
+                            <span>PHONE NUMBER</span>
+                            <p>+1 234 567 8900</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="mail"></i></div>
+                        <div class="info-text">
+                            <span>EMAIL ADDRESS</span>
+                            <p>support@triba.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-lucide="map-pin"></i></div>
+                        <div class="info-text">
+                            <span>LOCATION</span>
+                            <p>123 Fashion Dist, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container glass">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">SEND MESSAGE <i data-lucide="send"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 TRIBA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

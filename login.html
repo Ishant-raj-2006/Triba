@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | TRIBA Premium</title>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FAF9F6 100%);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .auth-card {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 4rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        .auth-header label {
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 0.4em;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .auth-header h1 {
+            font-size: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-auth {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-btn:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent-gold);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .divider span {
+            padding: 0 1rem;
+        }
+
+        .auth-form {
+            text-align: left;
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: #FDFDFD;
+            font-family: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        .auth-form input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.05);
+        }
+
+        .forgot-pass {
+            display: block;
+            text-align: right;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .submit-btn {
+            margin-top: 2rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .auth-footer {
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .auth-footer a {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 576px) {
+            .auth-card {
+                padding: 3rem 1.5rem;
+            }
+            .auth-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Back Link -->
+        <a href="index.html" class="back-home">
+            <i data-lucide="arrow-left" style="width: 16px;"></i> BACK TO HOME
+        </a>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <label>WELCOME TO TRIBA</label>
+                <h1>Login</h1>
+            </div>
+
+            <!-- Social Login Icons -->
+            <div class="social-auth">
+                <button class="social-btn">
+                    <i data-lucide="mail" style="width:18px;"></i> Google
+                </button>
+                <button class="social-btn">
+                    <i data-lucide="layout" style="width:18px;"></i> Apple
+                </button>
+            </div>
+
+            <div class="divider">
+                <span>OR LOGIN WITH EMAIL</span>
+            </div>
+
+            <!-- Login Form -->
+            <form class="auth-form" onsubmit="event.preventDefault(); location.href='index.html';">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn-primary submit-btn">
+                    ENTER TRIBA <i data-lucide="arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Don't have an account? <a href="signup.html">CREATE ONE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

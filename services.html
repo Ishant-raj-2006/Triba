@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | TRIBA</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">TRIBA<span class="logo-dot">.</span></a>
+            <div class="nav-links desktop">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html" class="active">SERVICES</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon"><i data-lucide="search"></i></button>
+                <a href="login.html" class="nav-icon"><i data-lucide="user"></i></a>
+                <a href="cart.html" class="nav-icon cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section-padding container" style="margin-top: 50px;">
+        <div class="shop-header">
+            <div>
+                <label style="font-weight: 700; color: var(--accent-gold); letter-spacing: 0.3em; font-size: 0.8rem;">OUR COLLECTION</label>
+                <h1 style="font-size: 3.5rem;">Shop All</h1>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="loadProducts('shop-products', 'ALL')">ALL</button>
+                <button class="filter-btn" onclick="loadProducts('shop-products', 'FASHION')">FASHION</button>
+                <button class="filter-btn" onclick="loadProducts('shop-products', 'FRAGRANCE')">FRAGRANCE</button>
+            </div>
+        </div>
+
+        <div id="shop-products" class="product-grid">
+            <!-- Products loaded by JS -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">TRIBA<span class="logo-dot">.</span></a>
+                    <p>TRIBA represents modern fashion and cosmetic excellence.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>SHOP</h4>
+                    <ul>
+                        <li><a href="services.html">NEW ARRIVALS</a></li>
+                        <li><a href="services.html">BEST SELLERS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TRIBA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

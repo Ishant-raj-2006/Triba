@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | TRIBA Club</title>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FAF9F6 100%);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .auth-card {
+            background: rgb(32, 16, 16);
+            width: 100%;
+            max-width: 550px;
+            padding: 4rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .auth-header label {
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 0.4em;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .auth-header h1 {
+            font-size: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .auth-form {
+            text-align: left;
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: #FDFDFD;
+            font-family: inherit;
+        }
+
+        .auth-form input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .submit-btn {
+            margin-top: 2rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .auth-footer {
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .auth-footer a {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Back Link -->
+        <a href="index.html" class="back-home">
+            <i data-lucide="arrow-left" style="width: 16px;"></i> BACK TO HOME
+        </a>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <label>JOIN THE TRIBA CLUB</label>
+                <h1>Sign Up</h1>
+            </div>
+
+            <form class="auth-form" onsubmit="event.preventDefault(); alert('Welcome to the TRIBA Club!'); location.href='login.html';">
+                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" placeholder="John" required>
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create a strong password" required>
+                </div>
+                
+                <button type="submit" class="btn-primary submit-btn">
+                    CREATE ACCOUNT <i data-lucide="user-plus"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Already part of the club? <a href="login.html">LOGIN HERE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
