@@ -2,12 +2,60 @@
 let cart = JSON.parse(localStorage.getItem('triba_cart')) || [];
 
 const products = [
-    { id: 1, name: 'Triba Elixir - Gold', price: 120, image: './src/assets/perfume.png', category: 'FRAGRANCE', desc: 'Premium long-lasting scent.' },
-    { id: 2, name: 'Silk Nude Wrap Dress', price: 240, image: './src/assets/fashion.png', category: 'FASHION', desc: 'Elegant silk wrap dress.' },
-    { id: 3, name: 'Floral Essence', price: 95, image: './src/assets/perfume.png', category: 'FRAGRANCE', desc: 'Spring inspired floral notes.' },
-    { id: 4, name: 'Classic Linen Blazer', price: 180, image: './src/assets/fashion.png', category: 'FASHION', desc: 'Timeless tailored blazer.' },
-    { id: 5, name: 'Midnight Oud', price: 150, image: './src/assets/perfume.png', category: 'FRAGRANCE', desc: 'Deep, woody evening scent.' },
-    { id: 6, name: 'Velvet Evening Gown', price: 320, image: './src/assets/fashion.png', category: 'FASHION', desc: 'Luxurious velvet for special nights.' }
+    { 
+        id: 1, 
+        name: 'Triba Elixir - Gold', 
+        price: 120, 
+        image: './src/assets/perfume.png', 
+        images: ['./src/assets/perfume.png', './src/assets/perfume.png', './src/assets/perfume.png'],
+        category: 'FRAGRANCE', 
+        desc: 'A divine blend of rare oils and golden extract, designed for the bold and elegant. This long-lasting scent leaves a trail of luxury wherever you go.' 
+    },
+    { 
+        id: 2, 
+        name: 'Silk Nude Wrap Dress', 
+        price: 240, 
+        image: './src/assets/fashion.png', 
+        images: ['./src/assets/fashion.png', './src/assets/fashion.png', './src/assets/fashion.png'],
+        category: 'FASHION', 
+        desc: 'Crafted from the finest 100% mulberry silk, this nude wrap dress flows gracefully with every step. Perfect for gala nights and upscale events.' 
+    },
+    { 
+        id: 3, 
+        name: 'Floral Essence', 
+        price: 95, 
+        image: './src/assets/perfume.png', 
+        images: ['./src/assets/perfume.png', './src/assets/perfume.png'],
+        category: 'FRAGRANCE', 
+        desc: 'A refreshing bouquet of spring blossoms. Light, airy, and feminine, perfect for daily wear.' 
+    },
+    { 
+        id: 4, 
+        name: 'Classic Linen Blazer', 
+        price: 180, 
+        image: './src/assets/fashion.png', 
+        images: ['./src/assets/fashion.png', './src/assets/fashion.png'],
+        category: 'FASHION', 
+        desc: 'Tailored to perfection, this breathable linen blazer is an essential for the modern wardrobe.' 
+    },
+    { 
+        id: 5, 
+        name: 'Midnight Oud', 
+        price: 150, 
+        image: './src/assets/perfume.png', 
+        images: ['./src/assets/perfume.png', './src/assets/perfume.png'],
+        category: 'FRAGRANCE', 
+        desc: 'Intense, mysterious, and deep. The woody notes of Oud combined with midnight air.' 
+    },
+    { 
+        id: 6, 
+        name: 'Velvet Evening Gown', 
+        price: 320, 
+        image: './src/assets/fashion.png', 
+        images: ['./src/assets/fashion.png', './src/assets/fashion.png'],
+        category: 'FASHION', 
+        desc: 'Make a statement in this deep velvet gown. A masterpiece of craftsmanship and style.' 
+    }
 ];
 
 // --- CORE FUNCTIONS ---
@@ -62,10 +110,10 @@ function loadProducts(containerId, categoryFilter = 'ALL') {
     }
 
     container.innerHTML = filtered.map(product => `
-        <div class="product-card">
+        <div class="product-card" onclick="openProductDetail(${product.id})">
             <div class="product-img-wrapper">
                 <img src="${product.image}" alt="${product.name}">
-                <button class="add-to-cart-overlay" onclick="addToCart(${product.id})">
+                <button class="add-to-cart-overlay" onclick="event.stopPropagation(); addToCart(${product.id})">
                     <i data-lucide="plus"></i> ADD TO BAG
                 </button>
             </div>
@@ -79,6 +127,89 @@ function loadProducts(containerId, categoryFilter = 'ALL') {
     
     if (window.lucide) lucide.createIcons();
 }
+
+// Product Detail Modal Logic
+function openProductDetail(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    // Create Modal if not exists
+    let modal = document.getElementById('product-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'product-modal';
+        modal.className = 'product-modal-container';
+        document.body.appendChild(modal);
+    }
+
+    modal.innerHTML = `
+        <div class="product-modal-content glass">
+            <button class="close-modal" onclick="closeProductDetail()"><i data-lucide="x"></i></button>
+            <div class="modal-body-grid">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="${product.images[0]}" id="modal-main-img" alt="${product.name}">
+                    </div>
+                    <div class="thumbnail-list">
+                        ${product.images.map((img, idx) => `
+                            <div class="thumb ${idx === 0 ? 'active' : ''}" onclick="changeModalImage('${img}', this)">
+                                <img src="${img}" alt="Thumbnail">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="product-details-info">
+                    <label class="modal-category">${product.category}</label>
+                    <h2 class="modal-title">${product.name}</h2>
+                    <p class="modal-price">$${product.price.toFixed(2)}</p>
+                    <div class="modal-desc">
+                        <h4>DESCRIPTION</h4>
+                        <p>${product.desc}</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn-primary w-full" onclick="addToCart(${product.id}); closeProductDetail();">
+                            ADD TO BAG <i data-lucide="shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="modal-features">
+                        <div class="feature-item"><i data-lucide="truck"></i> Free Shipping</div>
+                        <div class="feature-item"><i data-lucide="refresh-cw"></i> 30 Days Return</div>
+                        <div class="feature-item"><i data-lucide="shield-check"></i> Secure Checkout</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+}
+
+function closeProductDetail() {
+    const modal = document.getElementById('product-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function changeModalImage(imgSrc, thumbElement) {
+    document.getElementById('modal-main-img').src = imgSrc;
+    document.querySelectorAll('.thumb').forEach(el => el.classList.remove('active'));
+    thumbElement.classList.add('active');
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProductDetail();
+});
+
+// Close modal when clicking outside content
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('product-modal');
+    if (e.target === modal) closeProductDetail();
+});
 
 // --- PAGE SPECIFIC LOGIC ---
 
