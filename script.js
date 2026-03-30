@@ -5,7 +5,7 @@ const products = [
     { 
         id: 1, 
         name: 'Triba Elixir - Gold', 
-        price: 120, 
+        price: 9960, 
         image: './src/assets/perfume.png', 
         images: ['./src/assets/perfume.png', './src/assets/perfume.png', './src/assets/perfume.png'],
         category: 'FRAGRANCE', 
@@ -14,7 +14,7 @@ const products = [
     { 
         id: 2, 
         name: 'Silk Nude Wrap Dress', 
-        price: 240, 
+        price: 19920, 
         image: './src/assets/fashion.png', 
         images: ['./src/assets/fashion.png', './src/assets/fashion.png', './src/assets/fashion.png'],
         category: 'FASHION', 
@@ -23,7 +23,7 @@ const products = [
     { 
         id: 3, 
         name: 'Floral Essence', 
-        price: 95, 
+        price: 7885, 
         image: './src/assets/perfume.png', 
         images: ['./src/assets/perfume.png', './src/assets/perfume.png'],
         category: 'FRAGRANCE', 
@@ -32,7 +32,7 @@ const products = [
     { 
         id: 4, 
         name: 'Classic Linen Blazer', 
-        price: 180, 
+        price: 14940, 
         image: './src/assets/fashion.png', 
         images: ['./src/assets/fashion.png', './src/assets/fashion.png'],
         category: 'FASHION', 
@@ -41,7 +41,7 @@ const products = [
     { 
         id: 5, 
         name: 'Midnight Oud', 
-        price: 150, 
+        price: 12450, 
         image: './src/assets/perfume.png', 
         images: ['./src/assets/perfume.png', './src/assets/perfume.png'],
         category: 'FRAGRANCE', 
@@ -50,7 +50,7 @@ const products = [
     { 
         id: 6, 
         name: 'Velvet Evening Gown', 
-        price: 320, 
+        price: 26560, 
         image: './src/assets/fashion.png', 
         images: ['./src/assets/fashion.png', './src/assets/fashion.png'],
         category: 'FASHION', 
@@ -120,7 +120,7 @@ function loadProducts(containerId, categoryFilter = 'ALL') {
             <div class="product-info">
                 <label>${product.category}</label>
                 <h3>${product.name}</h3>
-                <span class="price">$${product.price.toFixed(2)}</span>
+                <span class="price">₹${product.price.toLocaleString('en-IN')}</span>
             </div>
         </div>
     `).join('');
@@ -161,7 +161,7 @@ function openProductDetail(productId) {
                 <div class="product-details-info">
                     <label class="modal-category">${product.category}</label>
                     <h2 class="modal-title">${product.name}</h2>
-                    <p class="modal-price">$${product.price.toFixed(2)}</p>
+                    <p class="modal-price">₹${product.price.toLocaleString('en-IN')}</p>
                     <div class="modal-desc">
                         <h4>DESCRIPTION</h4>
                         <p>${product.desc}</p>
@@ -234,14 +234,14 @@ function loadCartPage() {
                 <div class="cart-item-info">
                     <h3>${item.name}</h3>
                     <p>${item.category}</p>
-                    <span class="item-price">$${item.price} x ${item.quantity}</span>
+                    <span class="item-price">₹${item.price.toLocaleString('en-IN')} x ${item.quantity}</span>
                 </div>
                 <button class="remove-btn" onclick="removeFromCart(${item.id})"><i data-lucide="trash-2"></i></button>
             </div>
         `;
     }).join('');
     
-    if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+    if (totalEl) totalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
     if (window.lucide) lucide.createIcons();
 }
 

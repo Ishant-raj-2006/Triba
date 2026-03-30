@@ -8,8 +8,8 @@ import fashionImg from '../assets/fashion.png';
 
 const Home = () => {
   const featuredProducts = [
-    { id: 1, name: 'Triba Elixir - Gold Edition', price: '$120.00', image: perfumeImg, category: 'FRAGRANCE' },
-    { id: 2, name: 'Silk Nude Wrap Dress', price: '$240.00', image: fashionImg, category: 'FASHION' },
+    { id: 1, name: 'Triba Elixir - Gold Edition', price: '₹9,960.00', image: perfumeImg, category: 'FRAGRANCE' },
+    { id: 2, name: 'Silk Nude Wrap Dress', price: '₹19,920.00', image: fashionImg, category: 'FASHION' },
     // Add more mock products as needed
   ];
 

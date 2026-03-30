@@ -7,12 +7,12 @@ import perfumeImg from '../assets/perfume.png';
 import fashionImg from '../assets/fashion.png';
 
 const products = [
-  { id: 1, name: 'Triba Elixir - Gold Edition', price: '$120.00', image: perfumeImg, category: 'COSMETIC' },
-  { id: 2, name: 'Silk Nude Wrap Dress', price: '$240.00', image: fashionImg, category: 'FASHION' },
-  { id: 3, name: 'Triba Essence - Rose Quartz', price: '$85.00', image: perfumeImg, category: 'COSMETIC' },
-  { id: 4, name: 'Boho Chic Unisex Shirt', price: '$110.00', image: fashionImg, category: 'FASHION' },
-  { id: 5, name: 'Hydra-Glow Moisturizer', price: '$45.00', image: perfumeImg, category: 'COSMETIC' },
-  { id: 6, name: 'Elegant Satin Slip', price: '$180.00', image: fashionImg, category: 'FASHION' },
+  { id: 1, name: 'Triba Elixir - Gold Edition', price: '₹9,960', image: perfumeImg, category: 'COSMETIC' },
+  { id: 2, name: 'Silk Nude Wrap Dress', price: '₹19,920', image: fashionImg, category: 'FASHION' },
+  { id: 3, name: 'Triba Essence - Rose Quartz', price: '₹7,055', image: perfumeImg, category: 'COSMETIC' },
+  { id: 4, name: 'Boho Chic Unisex Shirt', price: '₹9,130', image: fashionImg, category: 'FASHION' },
+  { id: 5, name: 'Hydra-Glow Moisturizer', price: '₹3,735', image: perfumeImg, category: 'COSMETIC' },
+  { id: 6, name: 'Elegant Satin Slip', price: '₹14,940', image: fashionImg, category: 'FASHION' },
 ];
 
 const Services = () => {

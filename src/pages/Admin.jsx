@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, ShoppingBag, DollarSign, Package, Plus, Edit, Trash2, Search } from 'lucide-react';
+import { LayoutDashboard, ShoppingBag, IndianRupee, Package, Plus, Edit, Trash2, Search } from 'lucide-react';
 import './Admin.css';
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState('products');
   
   const mockProducts = [
-    { id: 1, name: 'Triba Elixir', price: '$120.00', category: 'COSMETIC', stock: 45 },
-    { id: 2, name: 'Silk Wrap Dress', price: '$240.00', category: 'FASHION', stock: 12 },
-    { id: 3, name: 'Essence Rose', price: '$85.00', category: 'COSMETIC', stock: 30 },
+    { id: 1, name: 'Triba Elixir', price: '₹9,960.00', category: 'COSMETIC', stock: 45 },
+    { id: 2, name: 'Silk Wrap Dress', price: '₹19,920.00', category: 'FASHION', stock: 12 },
+    { id: 3, name: 'Essence Rose', price: '₹7,055.00', category: 'COSMETIC', stock: 30 },
   ];
 
   const mockOrders = [
-    { id: '#1234', customer: 'Sarah Parker', date: '2026-03-18', total: '$360.00', status: 'Delivered' },
-    { id: '#1235', customer: 'Emma Watson', date: '2026-03-19', total: '$120.00', status: 'Processing' },
+    { id: '#1234', customer: 'Sarah Parker', date: '2026-03-18', total: '₹29,880.00', status: 'Delivered' },
+    { id: '#1235', customer: 'Emma Watson', date: '2026-03-19', total: '₹9,960.00', status: 'Processing' },
   ];
 
   return (
@@ -45,7 +45,7 @@ const Admin = () => {
             className={activeTab === 'prices' ? 'active' : ''} 
             onClick={() => setActiveTab('prices')}
           >
-            <DollarSign size={20} /> Price Management
+            <IndianRupee size={20} /> Price Management
           </button>
         </nav>
       </aside>
@@ -134,7 +134,7 @@ const Admin = () => {
             <div className="stats-grid">
                <div className="stat-card">
                   <h4>Total Sales</h4>
-                  <p>$45,230</p>
+                  <p>₹37,54,090</p>
                </div>
                <div className="stat-card">
                   <h4>Total Orders</h4>
